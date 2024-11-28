@@ -4,9 +4,13 @@ Unit testing is a near-necessary feature for medium-to-large-sized programs. The
 ## Setup
 add an additional source file to contain your tests (in this example, `tests.s`). In the same directory, insert the file `test_framework.s`.
 
-Start your programs reset procedure with `.include "tests.s"`, i.e.:
+Start your programs reset procedure with disabling interrupts and then `.include "tests.s"`, i.e.:
 ```x86asm
 .proc reset
+    lda #0
+    sta PPU_CONTROL ; disable NMI; your PPUCTRL register address might use a different name
+    sei ; mask interrupts
+
 	.include "tests.s"
 	... ; rest of your reset procedure
 ```
