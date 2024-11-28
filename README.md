@@ -1,10 +1,10 @@
 # 6502 Unit Tests
-Unit testing is a near-necessary feature for medium-to-large-sized programs. There is no unified solution for this in 6502 assembly; this project offers a solution.
+Unit testing is a near-necessary feature for medium-to-large-sized programs. There is no unified solution for this in 6502 assembly; this project attempts to offer one.
 
 ## Setup
 add an additional source file to contain your tests (in this example, `tests.s`). In the same directory, insert the file `test_framework.s`.
 
-In your programs reset function, first call `.include tests.s`, i.e.:
+Start your programs reset procedure with `.include "tests.s"`, i.e.:
 ```x86asm
 .proc reset
 	.include "tests.s"
