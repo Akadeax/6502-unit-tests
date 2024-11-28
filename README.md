@@ -1,4 +1,4 @@
-# 6502 Unit Tests
+# 6502 (NES) Unit Tests
 Unit testing is a near-necessary feature for medium-to-large-sized programs. There is no unified solution for this in 6502 assembly; this project attempts to offer one.
 
 ## Setup
