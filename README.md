@@ -39,6 +39,11 @@ sta my_lo_addr
 lda $A5
 sta my_hi_addr
 val16_eq_literal my_lo_addr, my_hi_addr, $A5C0 ; succeeds
+
+; calling a function
+jsr calculate_my_values
+pla
+a_eq_literal #5 ; if calculate_my_values pushed 5 on the stack as output, suceeds
 ```
 If you need further and more complex examples of usage, see [Nespad](https://github.com/Akadeax/nespad), a NES text editor that uses this framework.
 
